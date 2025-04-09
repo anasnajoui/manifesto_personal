@@ -134,3 +134,137 @@ a {
 }
 
 /* Optional: Add styling for specific elements like blockquotes, lists etc. */
+
+/* Hide the actual audio element */
+.audio-element-hidden {
+  display: none;
+}
+
+/* Custom Audio Player Container */
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  background-color: transparent; /* No background */
+  padding: 10px 0; /* Adjust padding */
+  margin-top: 20px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+/* Play/Pause Button */
+.play-pause-button {
+  background: none;
+  border: none;
+  color: #FF6347; /* Neon Red */
+  font-size: 1.8em; /* Adjust size */
+  cursor: pointer;
+  padding: 0 15px;
+  /* Optional Neon Glow */
+  text-shadow: 0 0 3px rgba(255, 99, 71, 0.7), 
+               0 0 8px rgba(255, 99, 71, 0.5);
+  transition: text-shadow 0.2s ease;
+}
+
+.play-pause-button:hover {
+  text-shadow: 0 0 5px rgba(255, 99, 71, 0.9), 
+               0 0 15px rgba(255, 99, 71, 0.7);
+}
+
+/* Time Displays */
+.time-display {
+  color: #FF6347; /* Neon Red */
+  font-size: 0.9em;
+  min-width: 40px; /* Ensure space for time */
+  text-align: center;
+  /* Apply same text-shadow as other neon text */
+  text-shadow: 0 0 3px rgba(255, 99, 71, 0.7),
+               0 0 8px rgba(255, 99, 71, 0.5),
+               0 0 15px rgba(255, 99, 71, 0.3);
+}
+
+.current-time {
+  padding-right: 10px;
+}
+
+.duration {
+  padding-left: 10px;
+}
+
+/* Progress Bar (input range) */
+.progress-bar {
+  flex-grow: 1; /* Take up remaining space */
+  height: 6px; /* Bar height */
+  cursor: pointer;
+  appearance: none; /* Override default look */
+  -webkit-appearance: none;
+  background: #404040; /* Grey background track */
+  border-radius: 3px;
+  outline: none;
+  border: none;
+}
+
+/* Progress Bar Thumb (Chrome/Safari/Edge) */
+.progress-bar::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px; /* Thumb size */
+  height: 16px;
+  background: #FF6347; /* Neon red */
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  /* Optional Neon Glow for Thumb */
+  box-shadow: 0 0 3px rgba(255, 99, 71, 0.7), 
+              0 0 8px rgba(255, 99, 71, 0.5);
+}
+
+/* Progress Bar Thumb (Firefox) */
+.progress-bar::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #FF6347;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 0 3px rgba(255, 99, 71, 0.7), 
+              0 0 8px rgba(255, 99, 71, 0.5);
+}
+
+/* Progress Bar Fill (Simulated with pseudo-elements - tricky, may need JS) */
+/* Basic track fill for Chrome */
+/* Note: A JS solution updating a background gradient might be more reliable */
+.progress-bar::-webkit-progress-value {
+  /* This often doesn't work reliably for input[type=range] */
+  background-color: #FF6347; 
+  border-radius: 3px;
+}
+
+.progress-bar::-webkit-progress-bar {
+  background-color: #404040; 
+  border-radius: 3px;
+}
+
+/* Progress Bar Fill (Firefox) */
+.progress-bar::-moz-progress-bar {
+  background-color: #FF6347;
+  border-radius: 3px;
+}
+
+/* Responsive styles for mobile */
+@media (max-width: 600px) {
+  .manifesto-container {
+    padding: 20px; /* Reduced padding on smaller screens */
+  }
+
+  .text-block p {
+    /* Reduced font size for mobile */
+    font-size: 1.4em; /* Adjusted from 2.1em */
+  }
+
+  /* Optional: Adjust heading size on mobile too */
+  /*
+  .text-block h2 {
+    font-size: 1.9em; 
+  }
+  */
+}
