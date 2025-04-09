@@ -228,7 +228,7 @@ export default function Home() {
           <div className="image-row">
             <div className="image-item">
               <Image
-                src="/images/morocco12.jpg"
+                src="/images/omar1.jpg"
                 alt="Description for image 1"
                 fill={true}
                 style={{ objectFit: 'cover' }}
@@ -264,16 +264,36 @@ export default function Home() {
             <p>And oh, how I wield those gifts to spark innovation and awe! I craft ideas that stop the world cold, products that redefine what&apos;s possible, explanations that make jaws drop and minds ignite. I don&apos;t just solve problems—I create wonder, leaving &quot;wow&quot; in my wake like a comet&apos;s tail.</p>
         </section>
 
-        <section className="image-block image-block-center">
-            <div className="image-item-center">
+        <section className="image-block">
+          <div className="image-row">
+            <div className="image-item">
               <Image
-                src="/images/socrates1.jpg"
-                alt="Socrates"
+                src="/images/tesla1.jpg"
+                alt="Description for image 1"
                 fill={true}
                 style={{ objectFit: 'cover' }}
-                sizes="(max-width: 768px) 50vw, 33vw"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>
+            <div className="image-item">
+              <Image
+                src="/images/socrates1.jpg"
+                alt="Description for image 2"
+                fill={true}
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+            <div className="image-item">
+              <Image
+                src="/images/musk2.webp"
+                alt="Description for image 3"
+                fill={true}
+                style={{ objectFit: 'cover' }}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
+          </div>
         </section>
 
         <section className="text-block">
