@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+      <!-- Blur the source graphic -->
+      <feGaussianBlur stdDeviation="1.5" result="coloredBlur"/>
+      <!-- Create a slightly offset shadow (optional) -->
+      <feOffset dx="0" dy="0" result="offsetBlur" in="coloredBlur"/>
+      <!-- Merge the original shape and the glow -->
+      <feMerge>
+        <feMergeNode in="offsetBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <!-- Black background -->
+  <rect width="32" height="32" fill="#1B1B1B"/>
+  <!-- Neon red square - inset slightly for glow visibility -->
+  <rect x="6" y="6" width="20" height="20" fill="#FF6347" style="filter:url(#neon-glow);"/>
+</svg> 
