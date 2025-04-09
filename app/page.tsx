@@ -122,7 +122,7 @@ export default function Home() {
 
             {/* Hidden Audio Element with autoPlay */}
             <audio ref={audioRef} className="audio-element-hidden" autoPlay>
-              <source src="/audio/narcissus.mp3" type="audio/mpeg" />
+              <source src="/audio/Narcissus.mp3" type="audio/mpeg" />
               Your browser does not support the audio element.
             </audio>
 
