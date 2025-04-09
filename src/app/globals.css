@@ -1,3 +1,5 @@
+/* Remove default :root variables and dark mode query if not needed */
+/*
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -9,6 +11,7 @@
     --foreground: #ededed;
   }
 }
+*/
 
 html,
 body {
@@ -17,11 +20,13 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  /* Monospace font stack */
+  font-family: 'SF Mono', SFMono-Regular, ui-monospace, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  line-height: 1.6;
+  /* Dark background, neon text color */
+  background-color: #1B1B1B;
+  color: #FF6347; /* Tomato */
 }
 
 * {
@@ -35,8 +40,97 @@ a {
   text-decoration: none;
 }
 
+/* Remove dark mode styles if forcing light mode styles above
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
 }
+*/
+
+.manifesto-container {
+  max-width: 720px; /* Slightly wider text column */
+  margin: 60px auto; /* Increased top/bottom margin */
+  padding: 40px 60px; /* Increased padding inside container */
+  background-color: #1B1B1B; /* Match body background */
+}
+
+.text-block {
+  margin-bottom: 30px; /* Slightly reduced space between text blocks */
+}
+
+.text-block h2,
+.text-block p {
+  /* Neon glow effect */
+  text-shadow: 0 0 3px rgba(255, 99, 71, 0.7), /* Inner glow */
+               0 0 8px rgba(255, 99, 71, 0.5), /* Outer glow */
+               0 0 15px rgba(255, 99, 71, 0.3); /* Wider softer glow */
+}
+
+.text-block h2 {
+  font-size: 1.7em; /* Slightly smaller heading */
+  font-weight: 600; /* Adjust weight as needed */
+  margin-top: 2em;
+  margin-bottom: 1em;
+  line-height: 1.3;
+}
+
+.text-block p {
+  font-size: 1.05em; /* Slightly adjusted paragraph size */
+  margin-bottom: 0.8em;
+}
+
+/* Styling for the image row container */
+.image-row {
+  display: flex;
+  flex-direction: row; /* Arrange items horizontally */
+  width: 100%;
+  height: 50vh; /* Adjust height of the image row as needed */
+  overflow: hidden; /* Hide anything that might overflow */
+}
+
+/* Styling for individual image containers within the row */
+.image-item {
+  flex: 1; /* Each item takes equal width */
+  position: relative; /* Needed for next/image with fill=true */
+  min-width: 0; /* Helps prevent flexbox overflow issues */
+}
+
+/* Ensure the image block itself doesn't have conflicting styles */
+.image-block {
+  /* Make image blocks break out of the container */
+  width: 100vw; /* Full viewport width */
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  /* Adjust margins to feel connected to text */
+  margin-top: 50px;
+  margin-bottom: 80px; /* Increased space after image block */
+  background-color: #1B1B1B; /* Match body background */
+  padding: 0; /* Remove padding if any */
+  height: auto; /* Let the image-row define the height */
+}
+
+/* Remove direct img styling if using the row layout */
+/*
+.image-block img {
+  
+}
+*/
+
+/* Styles for centering a single image */
+.image-block-center {
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (optional, adjust height below) */
+  height: 50vh; /* Maintain consistent height with image-row, adjust as needed */
+}
+
+.image-item-center {
+  width: 33.33%; /* Occupy the middle third (adjust as needed) */
+  height: 100%; /* Fill the vertical space defined by .image-block-center */
+  position: relative; /* Needed for next/image with fill=true */
+  min-width: 0;
+}
+
+/* Optional: Add styling for specific elements like blockquotes, lists etc. */
