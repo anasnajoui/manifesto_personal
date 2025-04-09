@@ -268,3 +268,39 @@ a {
   }
   */
 }
+
+/* Styling for the final manifesto quote */
+.manifesto-quote {
+  font-family: Garamond, Georgia, serif; /* Garamond with fallback */
+  font-style: italic;
+  text-align: left; /* Keep left align as per provided file */
+  font-size: 1.8em; /* Keep larger size */
+  line-height: 1.7;
+  margin-top: 100px; /* Keep larger top margin */
+  margin-bottom: 60px; /* Extra space below the quote */
+  /* Keep the neon color and glow */
+  color: #FF6347;
+  text-shadow: 0 0 3px rgba(255, 99, 71, 0.7),
+               0 0 8px rgba(255, 99, 71, 0.5),
+               0 0 15px rgba(255, 99, 71, 0.3);
+  /* Add relative positioning and padding for the bar */
+  position: relative;
+  padding-left: 25px; /* Space for the bar + some gap */
+  border: none; /* Ensure no accidental borders */
+}
+
+/* Vertical glowing bar */
+.manifesto-quote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px; /* Width of the bar */
+  background-color: #FF6347; /* Neon red */
+  border-radius: 2px; /* Slightly rounded ends */
+  /* Neon glow effect for the bar */
+  box-shadow: 0 0 5px rgba(255, 99, 71, 0.8),
+              0 0 10px rgba(255, 99, 71, 0.6),
+              0 0 15px rgba(255, 99, 71, 0.4);
+}
